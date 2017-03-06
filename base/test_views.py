@@ -1,3 +1,4 @@
+import time
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.urls import reverse
 from splinter import Browser
@@ -18,6 +19,7 @@ class TestBaseViews(StaticLiveServerTestCase):
         """Initialize the browser, before running the tests.
         """
         self.browser = Browser('chrome')
+        time.sleep(0.3)
 
     def tearDown(self):
         """At the end of tests, close the browser
@@ -30,6 +32,7 @@ class TestBaseViews(StaticLiveServerTestCase):
         Visit the url of name 'home' and check it loads the content
         """
         self.browser.visit(self.live_server_url + reverse('home'))
+        time.sleep(0.3)
         self.assertTrue(self.browser.is_text_present('Hello, world!'))
 
     def test_robots(self):
@@ -39,6 +42,7 @@ class TestBaseViews(StaticLiveServerTestCase):
         """
         self.browser.visit(self.live_server_url + reverse('base_files',
                            kwargs={'filename': 'robots.txt'}))
+        time.sleep(0.3)
         self.assertTrue(self.browser.is_text_present('robotstxt'))
 
     def test_humans(self):
@@ -48,4 +52,5 @@ class TestBaseViews(StaticLiveServerTestCase):
         """
         self.browser.visit(self.live_server_url + reverse('base_files',
                            kwargs={'filename': 'humans.txt'}))
+        time.sleep(0.3)
         self.assertTrue(self.browser.is_text_present('humanstxt'))
