@@ -1,5 +1,7 @@
-# djangoTemplate
+# Leyes.io
 
-This is basic django template that we use in order to kickstart our projects.
+![alt text](https://travis-ci.org/tosp/Leyes.io.svg?branch=master "Travis Build Status") [![Documentation Status](https://readthedocs.org/projects/leyesio/badge/?version=latest "Documentation Status")](http://leyesio.readthedocs.io/en/latest/?badge=latest) [![Coverage](https://codecov.io/github/tosp/Leyes.io/coverage.svg?branch=master "Codecov Coverage")](https://codecov.io/github/tosp/Leyes.io)
 
-Please check the HOWTOUSE.md file in order to see how to install it, and start using this template.
+A project that aims to make legislature free, and accesible for everyone.
+
+Un projecto que busca hacer la legislatura libre, y accesible para todos.
