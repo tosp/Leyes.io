@@ -1,0 +1,30 @@
+{% extends "layouts/basic.html" %}
+{% load staticfiles %}
+{% block page_title %}Awesome Page{% endblock %}
+{% block extra_css %} 
+	<link rel="stylesheet" type="text/css" href={% static "css/base/home.css" %}>
+{% endblock %}
+{% block header %}
+{% endblock %}
+
+{% block body_content %}
+<div class='row text-center'>
+	<h1>Hello, world!</h1>
+	<h2>Now get to work...</h2>
+</div>
+
+<div class='row text-center'>
+	{% if user and not user.is_anonymous %}
+	<a>Hello, {{ user.get_full_name }}!</a>
+	<br>
+	<a href="/tosp_auth/logout">Logout</a>
+	{% else %}
+	<a href="{% url 'social:begin' 'facebook' %}?next{{ request.path }}"> Login with Facebook</a>
+	<a href="{% url 'social:begin' 'google-oauth2' %}?next{{ request.path }}"> Login with Google</a>
+	{% endif %}
+
+</div>
+{% endblock %}
+
+{% block footer_content %}
+{% endblock %}
