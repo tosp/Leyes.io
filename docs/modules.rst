@@ -1,4 +1,4 @@
-djangoTemplate
+Leyes.io
 ==============
 
 .. toctree::
